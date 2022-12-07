@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ButtonStart({ text }) {
+function ButtonStart({ children }) {
     const style = {
         backgroundColor: '#F8D41A',
         width: 160,
@@ -19,7 +19,7 @@ function ButtonStart({ text }) {
     };
     return (
         <div style={style}>
-            <div style={textStyle}>{text}</div>
+            <div style={textStyle}>{children}</div>
         </div>
     );
 }
