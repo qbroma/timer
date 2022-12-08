@@ -2,10 +2,10 @@ import { Container } from './components/Container';
 import Content from './Content';
 import './Styles.css';
 import Time from './Time';
-import Buttons from './Buttons';
+import { Button } from './components/Button';
 import StatusBar from './StatusBar';
 import StatusBarLoading from './StatusBarLoading';
-import Blackout from './Blackout';
+import { Blackout } from './components/Blackout';
 import ChooseTime from './ChooseTime';
 import Header from './Header';
 import Text from './Text';
@@ -24,24 +24,22 @@ const App = () => {
                     </Header>
                     <Inputs>
                         <TextBeforeInput text="Hours:" />
-                        <Input />
+                        <Input/>
                         <TextBeforeInput text="Minutes:" />
-                        <Input />
+                        <Input/>
                         <TextBeforeInput text="Seconds:" />
-                        <Input />
+                        <Input/>
                     </Inputs>
                     <ButtonsTime>
-                        <Button>Start</Button>
-                        <Button>Reset</Button>
+                        <Button>Apply</Button>
+                        <Button>Cancel</Button>
                     </ButtonsTime>
                 </ChooseTime>
             </Blackout>
             <Content>
                 <Time text="00:00:00"></Time>
-                <Buttons>
-                    <Button>Start</Button>
-                    <Button>Reset</Button>
-                </Buttons>
+                    <Button className="buttonStart">Start</Button>
+                    <Button className="buttonReset">Reset</Button>
                 <StatusBar>
                     <StatusBarLoading />
                 </StatusBar>
