@@ -1,0 +1,66 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.wrapper {
+    display: inline-block;
+}
+
+.time {
+    font-size: 128px;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.btn {
+    font-family: inherit;
+    font-size: 24px;
+    padding: 22px 46px;
+    border: none;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px 5px var(--neutral-400);
+}
+
+.startBtn {
+    background: var(--yellow-color);
+}
+
+.resetBtn {
+    background: var(--neutral-800);
+    color: white;
+}
+
+.progressWrapper {
+    background: var(--neutral-800);
+    height: 30px;
+}
+
+.progressValue {
+    background: var(--yellow-color);
+    height: 30px;
+    width: 70%;
+}
+
+.modal {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.content {
+
+}
