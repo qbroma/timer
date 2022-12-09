@@ -24,7 +24,7 @@
 .btn {
     font-family: inherit;
     font-size: 24px;
-    padding: 22px 46px;
+    padding: 20px 50px;
     border: none;
     cursor: pointer;
     transition: all .2s;
@@ -62,5 +62,74 @@
 }
 
 .content {
-
+    width: 750px;
+    background-color: #fff;
+    margin: 240px auto;
 }
+
+.header {
+    background-color: var(--yellow-color);
+    max-width: 750px;
+    font-size: 48px;
+    padding: 10px 320px;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.input {
+    text-align: right;
+    min-width: 400px;
+    height: 50px;
+    border: none;
+    background-color: var(--grey-300);
+    padding: 0;
+}
+
+.inputs {
+    margin-top: 50px;
+}
+
+.textBeforeInput {
+    font-size: 48px;
+    font-family: inherit;
+}
+
+.textInput {
+    display: flex;
+    margin: 50px 50px 0;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 90px 120px 50px;
+}
+
+.btnTime {
+    font-family: inherit;
+    font-size: 40px;
+    padding: 5px 40px;
+    border: none;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.btnTime:hover {
+    box-shadow: 0 0 10px 5px var(--neutral-400);
+}
+
+.applyBtn {
+    background-color: var(--yellow-color);
+}
+
+.cancelBtn {
+    background-color: var(--grey-300);
+}
+
+
+
+
+
+
+
+
