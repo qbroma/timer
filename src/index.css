@@ -10,3 +10,7 @@ body {
     --grey-300: #d1d5db;
 }
 
+html {
+    font-family: Roboto, Arial, sans-serif;
+}
+

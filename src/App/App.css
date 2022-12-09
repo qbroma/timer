@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Roboto, Arial, sans-serif;
+    font-family: inherit;
 }
 
 .wrapper {
@@ -13,6 +13,10 @@
 .time {
     font-size: 128px;
     text-align: center;
+}
+
+.time:hover {
+    cursor: pointer;
 }
 
 .controls {
@@ -72,12 +76,13 @@
     max-width: 750px;
     font-size: 48px;
     padding: 10px 320px;
-    font-family: Roboto, Arial, sans-serif;
+    font-family: inherit;
 }
 
 .input {
     max-width: 400px;
     font-size: 50px;
+    font-family: inherit;
     border: none;
     background-color: var(--grey-300);
     padding: 0;
