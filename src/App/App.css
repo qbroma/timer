@@ -74,9 +74,7 @@
 .header {
     background-color: var(--yellow-color);
     max-width: 750px;
-    font-size: 48px;
-    padding: 10px 320px;
-    font-family: inherit;
+    height: 70px;
 }
 
 .input {
