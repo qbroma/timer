@@ -15,6 +15,10 @@
     text-align: center;
 }
 
+.time:hover {
+    cursor: pointer;
+}
+
 .controls {
     display: flex;
     justify-content: space-between;
