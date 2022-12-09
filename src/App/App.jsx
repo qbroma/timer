@@ -29,7 +29,7 @@ const App = () => {
                                 <input className="input"/>
                             </div>
                         </div>
-                        <div className="buttons">
+                        <div className="textInput">
                             <div className="btnTime applyBtn" onClick={handleCloseModal}>Apply</div>
                             <div className="btnTime cancelBtn" onClick={handleCloseModal}>Cancel</div>
                         </div>

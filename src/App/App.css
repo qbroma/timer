@@ -65,6 +65,7 @@
     width: 750px;
     background-color: #fff;
     margin: 240px auto;
+    padding-bottom: 50px;
 }
 
 .header {
@@ -97,12 +98,6 @@
     display: flex;
     margin: 50px 50px 0;
     justify-content: space-between;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 90px 120px 50px;
 }
 
 .btnTime {
