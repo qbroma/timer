@@ -70,8 +70,7 @@
 .header {
     background-color: var(--yellow-color);
     max-width: 750px;
-    font-size: 48px;
-    padding: 10px 320px;
+    height: 70px;
     font-family: Roboto, Arial, sans-serif;
 }
 

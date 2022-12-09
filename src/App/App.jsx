@@ -14,7 +14,7 @@ const App = () => {
             {isModalOpen && (
                 <div className="modal">
                     <div className="content">
-                        <div className="header">Time</div>
+                        <div className="header"></div>
                         <div className="inputs">
                             <div className="textInput">
                                 <span className="textBeforeInput">Hours:</span>
