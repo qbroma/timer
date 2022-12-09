@@ -80,9 +80,9 @@
 }
 
 .input {
+    max-width: 400px;
+    font-size: 50px;
     font-family: inherit;
-    min-width: 400px;
-    height: 50px;
     border: none;
     background-color: var(--grey-300);
     padding: 0;
