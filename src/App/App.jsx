@@ -1,6 +1,5 @@
 import './App.css';
 import { useState } from 'react';
-
 const App = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleOpenModal = () => {
@@ -9,12 +8,15 @@ const App = () => {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     }
+    const stopPropagation = (event) => {
+        event.stopPropagation();
+    }
     return (
         <>
             {isModalOpen && (
-                <div className="modal">
-                    <div className="content">
-                        <div className="header"></div>
+                <div className="modal" onClick={handleCloseModal}>
+                    <div className="content" onClick={stopPropagation}>
+                        <div className="header"/>
                         <div className="inputs">
                             <div className="textInput">
                                 <span className="textBeforeInput">Hours:</span>
