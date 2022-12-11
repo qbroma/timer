@@ -20,15 +20,15 @@ const App = () => {
                         <div className="inputs">
                             <div className="textInput">
                                 <span className="textBeforeInput">Hours:</span>
-                                <input className="input"/>
+                                <input className="input" type="number"/>
                             </div>
                             <div className="textInput">
                                 <span className="textBeforeInput">Minutes:</span>
-                                <input className="input"/>
+                                <input className="input" type="number"/>
                             </div>
                             <div className="textInput">
                                 <span className="textBeforeInput">Seconds:</span>
-                                <input className="input"/>
+                                <input className="input" type="number"/>
                             </div>
                         </div>
                         <div className="textInput">
