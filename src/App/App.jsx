@@ -1,28 +1,45 @@
 import './App.css';
 import { useState } from 'react';
-
-const twoDigits = (number) => {
-    if (number < 10) {
-        return `0${number}`;
-    }
-    return number;
-};
+import ClockFace from '../ClockFace';
 
 const App = () => {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
 
+    const [totalSeconds, setTotalSeconds] = useState(10);
+    const [millisecondsLeft, setMillisecondsLeft] = useState(totalSeconds * 1000);
+
+    const secondsLeft = millisecondsLeft / 1000;
+
     const [isModalOpen, setIsModalOpen] = useState(false);
+
     const handleOpenModal = () => {
         setIsModalOpen(true);
     };
+
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
+
+    const handleApplySettings = () => {
+        const resultSeconds = hours * 3600 + minutes * 60 + seconds;
+        setTotalSeconds(resultSeconds);
+        setMillisecondsLeft(resultSeconds * 1000);
+        handleCloseModal(resultSeconds)
+    }
+
+    const handleCanselSettings = () => {
+        setHours(Math.floor(totalSeconds / 3600));
+        setMinutes(Math.floor(totalSeconds / 60));
+        setSeconds(Math.floor(totalSeconds % 60));
+        handleCloseModal();
+    }
+
     const stopPropagation = (event) => {
         event.stopPropagation();
     };
+
     const handleChangeHours = (event) => {
         const value = +event.target.value;
         if (value < 24) {
@@ -74,20 +91,15 @@ const App = () => {
                             </div>
                         </div>
                         <div className="textInput">
-                            <div className="btnTime applyBtn" onClick={handleCloseModal}>Apply</div>
-                            <div className="btnTime cancelBtn" onClick={handleCloseModal}>Cancel</div>
+                            <div className="btnTime applyBtn" onClick={handleApplySettings}>Apply</div>
+                            <div className="btnTime cancelBtn" onClick={handleCanselSettings}>Cancel</div>
                         </div>
                     </div>
                 </div>
             )}
             <div className="container">
                 <div className="wrapper">
-                    <div
-                        className="time"
-                        onClick={handleOpenModal}
-                    >
-                        {twoDigits(hours)}:{twoDigits(minutes)}:{twoDigits(seconds)}
-                    </div>
+                    <ClockFace  clickHandler={handleOpenModal} totalSeconds={secondsLeft}/>
                     <div className="controls">
                         <button className="btn startBtn">Start</button>
                         <button className="btn resetBtn">Reset</button>
