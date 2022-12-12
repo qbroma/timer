@@ -99,7 +99,7 @@ const App = () => {
             )}
             <div className="container">
                 <div className="wrapper">
-                    <ClockFace  clickHandler={handleOpenModal} totalSeconds={secondsLeft}/>
+                    <ClockFace clickHandler={handleOpenModal} totalSeconds={secondsLeft}/>
                     <div className="controls">
                         <button className="btn startBtn">Start</button>
                         <button className="btn resetBtn">Reset</button>
