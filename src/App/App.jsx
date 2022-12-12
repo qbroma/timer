@@ -29,7 +29,7 @@ const App = () => {
         handleCloseModal(resultSeconds)
     }
 
-    const handleCanselSettings = () => {
+    const handleCancelSettings = () => {
         setHours(Math.floor(totalSeconds / 3600));
         setMinutes(Math.floor(totalSeconds / 60));
         setSeconds(Math.floor(totalSeconds % 60));
@@ -92,7 +92,7 @@ const App = () => {
                         </div>
                         <div className="textInput">
                             <div className="btnTime applyBtn" onClick={handleApplySettings}>Apply</div>
-                            <div className="btnTime cancelBtn" onClick={handleCanselSettings}>Cancel</div>
+                            <div className="btnTime cancelBtn" onClick={handleCancelSettings}>Cancel</div>
                         </div>
                     </div>
                 </div>
