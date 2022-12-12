@@ -1,11 +1,6 @@
 import React from 'react';
 
-const pad = (number) => {
-    if (number < 10) {
-        return `0${number}`;
-    }
-    return number;
-};
+const pad = (number) => number.toString().padStart(2, '0');
 
 const ClockFace =({ clickHandler, totalSeconds }) => {
     const hours = pad(Math.floor(totalSeconds /3600));
