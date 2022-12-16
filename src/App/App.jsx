@@ -8,10 +8,6 @@ const App = () => {
     const [seconds, setSeconds] = useState(0);
 
     const [totalSeconds, setTotalSeconds] = useState(10);
-    const [millisecondsLeft, setMillisecondsLeft] = useState(totalSeconds * 1000);
-
-
-    const secondsLeft = millisecondsLeft / 1000;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     // const [isModalOpenMobile, setIsModalOpenMobile] = useState(false);
@@ -35,17 +31,21 @@ const App = () => {
     const handleApplySettings = () => {
         const resultSeconds = hours * 3600 + minutes * 60 + seconds;
         setTotalSeconds(resultSeconds);
-        setMillisecondsLeft(resultSeconds * 1000);
         handleCloseModal(resultSeconds)
     }
 
-    const resultSeconds = () => {
-        console.log(totalSeconds);
-        setTotalSeconds(totalSeconds - 1);
-    };
-
     const clickStart = () => {
-        setInterval(resultSeconds, 1000);
+        const resultSeconds = () => {
+            setTotalSeconds((value) => {
+                console.log(value);
+                if (value > 0) {
+                    return  value - 1;
+                }
+                clearInterval(interval);
+                alert("Время вышло!")
+            });
+        };
+        const interval = setInterval(resultSeconds, 1000);
     };
 
     const handleCancelSettings = () => {
@@ -121,7 +121,7 @@ const App = () => {
             {/*)}*/}
             <div className="container">
                 <div className="wrapper">
-                    <ClockFace clickHandler={handleOpenModal} totalSeconds={secondsLeft}/>
+                    <ClockFace clickHandler={handleOpenModal} totalSeconds={totalSeconds}/>
                     <div className="controls">
                         <button className="btn startBtn" onClick={clickStart}>Start</button>
                         <button className="btn resetBtn">Reset</button>
