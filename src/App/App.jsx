@@ -10,12 +10,22 @@ const App = () => {
     const [totalSeconds, setTotalSeconds] = useState(10);
     const [millisecondsLeft, setMillisecondsLeft] = useState(totalSeconds * 1000);
 
+
     const secondsLeft = millisecondsLeft / 1000;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [isModalOpenMobile, setIsModalOpenMobile] = useState(false);
 
     const handleOpenModal = () => {
-        setIsModalOpen(true);
+        // const modal = document.getElementsByClassName("modal");
+        // const widthWindow = modal.style.clientWidth;
+        // console.log(widthWindow);
+        // if (widthWindow < 1000) {
+        //     setIsModalOpenMobile(true);
+        // }
+        // else {
+            setIsModalOpen(true);
+        // }
     };
 
     const handleCloseModal = () => {
@@ -28,6 +38,15 @@ const App = () => {
         setMillisecondsLeft(resultSeconds * 1000);
         handleCloseModal(resultSeconds)
     }
+
+    const resultSeconds = () => {
+        console.log(totalSeconds);
+        setTotalSeconds(totalSeconds - 1);
+    };
+
+    const clickStart = () => {
+        setInterval(resultSeconds, 1000);
+    };
 
     const handleCancelSettings = () => {
         setHours(Math.floor(totalSeconds / 3600));
@@ -97,11 +116,14 @@ const App = () => {
                     </div>
                 </div>
             )}
+            {/*{isModalOpenMobile && (*/}
+            {/*    <div className="modalMobile"></div>*/}
+            {/*)}*/}
             <div className="container">
                 <div className="wrapper">
                     <ClockFace clickHandler={handleOpenModal} totalSeconds={secondsLeft}/>
                     <div className="controls">
-                        <button className="btn startBtn">Start</button>
+                        <button className="btn startBtn" onClick={clickStart}>Start</button>
                         <button className="btn resetBtn">Reset</button>
                     </div>
                     <div className="progressWrapper">
