@@ -21,6 +21,7 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'react/react-in-jsx-scope': 'error',
         'no-trailing-spaces': 'error',
+        'linebreak-style': 'off',
         'import/no-duplicates': 'off',
         'quote-props': 'off',
         'indent': ['error', 4],
