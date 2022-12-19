@@ -9,18 +9,9 @@ function App() {
     const [totalSeconds, setTotalSeconds] = useState(10);
     const [millisecondsLeft, setMillisecondsLeft] = useState(totalSeconds * 1000);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const secondsLeft = millisecondsLeft / 1000;
 
     const handleOpenModal = () => {
-        // const modal = document.getElementsByClassName("modal");
-        // const widthWindow = modal.style.clientWidth;
-        // console.log(widthWindow);
-        // if (widthWindow < 1000) {
-        //     setIsModalOpenMobile(true);
-        // }
-        // else {
-            setIsModalOpen(true);
-        // }
+        setIsModalOpen(true);
     };
 
     const handleCloseModal = () => {
@@ -34,17 +25,7 @@ function App() {
     };
 
     const clickStart = () => {
-        const resultSeconds = () => {
-            setTotalSeconds((value) => {
-                console.log(value);
-                if (value > 0) {
-                    return  value - 1;
-                }
-                clearInterval(interval);
-                alert("Время вышло!")
-            });
-        };
-        const interval = setInterval(resultSeconds, 1000);
+
     };
 
     const handleCancelSettings = () => {
@@ -127,18 +108,11 @@ function App() {
                     </div>
                 </div>
             )}
-            {/*{isModalOpenMobile && (*/}
-            {/*    <div className="modalMobile"></div>*/}
-            {/*)}*/}
             <div className="container">
                 <div className="wrapper">
-                    <ClockFace clickHandler={handleOpenModal} totalSeconds={totalSeconds}/>
+                    <ClockFace clickHandler={handleOpenModal} totalSeconds={totalSeconds} />
                     <div className="controls">
-                        <button className="btn startBtn" onClick={clickStart}>Start</button>
-                        <button className="btn resetBtn">Reset</button>
-                    <ClockFace clickHandler={handleOpenModal} totalSeconds={secondsLeft} />
-                    <div className="controls">
-                        <button type="button" className="btn startBtn">Start</button>
+                        <button type="button" className="btn startBtn" onClick={clickStart}>Start</button>
                         <button type="button" className="btn resetBtn">Reset</button>
                     </div>
                     <div className="progressWrapper">
