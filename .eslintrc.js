@@ -22,6 +22,7 @@ module.exports = {
         'no-restricted-exports': 'off',
         'react/jsx-filename-extension': 'off',
         'react/prop-types': 'off',
+        'linebreak-style': ['error', 'unix'],
         indent: ['error', 4],
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
