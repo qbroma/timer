@@ -1,6 +1,5 @@
 import './App.css';
-import { useState } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import ClockFace from '../ClockFace';
 
 function App() {
