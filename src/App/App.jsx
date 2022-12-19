@@ -6,13 +6,10 @@ function App() {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
-
     const [totalSeconds, setTotalSeconds] = useState(10);
     const [millisecondsLeft, setMillisecondsLeft] = useState(totalSeconds * 1000);
-
-    const secondsLeft = millisecondsLeft / 1000;
-
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const secondsLeft = millisecondsLeft / 1000;
 
     const handleOpenModal = () => {
         setIsModalOpen(true);
@@ -21,7 +18,6 @@ function App() {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
-
     const handleApplySettings = () => {
         const resultSeconds = hours * 3600 + minutes * 60 + seconds;
         setTotalSeconds(resultSeconds);
