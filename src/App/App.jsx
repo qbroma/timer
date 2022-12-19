@@ -5,7 +5,7 @@ import ClockFace from '../ClockFace';
 function App() {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] = useState(0);
+    const [seconds, setSeconds] = useState(10);
     const [totalSeconds, setTotalSeconds] = useState(10);
     const [millisecondsLeft, setMillisecondsLeft] = useState(totalSeconds * 1000);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,7 +25,18 @@ function App() {
     };
 
     const clickStart = () => {
-
+        let prev = Date.now();
+        const interval = setInterval(() => {
+            setMillisecondsLeft((value) => {
+                const now = Date.now();
+                const diff = now - prev;
+                prev = now;
+                if (value > 0) return value - diff;
+                alert('Время вышло!');
+                clearInterval(interval);
+                return 0;
+            });
+        });
     };
 
     const handleCancelSettings = () => {
@@ -65,6 +76,8 @@ function App() {
             setSeconds(59);
         }
     };
+
+    const progress = `${((millisecondsLeft / 1000) / totalSeconds) * 100}%`;
 
     return (
         <>
@@ -110,13 +123,13 @@ function App() {
             )}
             <div className="container">
                 <div className="wrapper">
-                    <ClockFace clickHandler={handleOpenModal} totalSeconds={totalSeconds} />
+                    <ClockFace clickHandler={handleOpenModal} totalSeconds={millisecondsLeft / 1000} />
                     <div className="controls">
                         <button type="button" className="btn startBtn" onClick={clickStart}>Start</button>
                         <button type="button" className="btn resetBtn">Reset</button>
                     </div>
                     <div className="progressWrapper">
-                        <div className="progressValue" />
+                        <div className="progressValue" style={{ width: progress }} />
                     </div>
                 </div>
             </div>
