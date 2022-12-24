@@ -25,14 +25,13 @@ function App() {
     };
 
     const clickStart = () => {
-        let prev = Date.now();
+        const start = Date.now();
         const interval = setInterval(() => {
-            setMillisecondsLeft((value) => {
-                const now = Date.now();
-                const diff = now - prev;
-                prev = now;
-                if (value > 0) return value - diff;
-                alert('Время вышло!');
+            setMillisecondsLeft(() => {
+                const diff = Date.now() - start;
+                const nextValue = totalSeconds * 1000 - diff;
+                if (nextValue > 0) return nextValue;
+                console.log('Время вышло');
                 clearInterval(interval);
                 return 0;
             });
